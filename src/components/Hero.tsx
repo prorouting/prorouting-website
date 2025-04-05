@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            The <span className="text-gradient">Razorpay</span> of Logistics
+            The <span className="text-gradient">Logistics Orchestrator Engine</span> for Quick Commerce and more
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Simplifying hyperlocal logistics through ONDC integration. Connect with multiple logistics partners through a single API.

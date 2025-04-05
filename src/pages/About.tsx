@@ -38,7 +38,7 @@ const About = () => {
                 About <span className="text-gradient">PROROUTING</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                We're building the Razorpay of Logistics. Our mission is to simplify hyperlocal logistics through ONDC integration and provide seamless delivery experiences.
+                We're building the Logistics Orchestrator Engine for Quick Commerce and more. Our mission is to simplify hyperlocal logistics through ONDC integration and provide seamless delivery experiences.
               </p>
             </div>
           </div>
