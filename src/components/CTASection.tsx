@@ -11,7 +11,7 @@ const CTASection = () => {
             Ready to Transform Your Logistics?
           </h2>
           <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Join the growing network of businesses optimizing their delivery operations with ProRouting Technology
+            Join the growing network of businesses optimizing their delivery operations with PROROUTING Technology
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="font-medium text-primary">

@@ -8,6 +8,7 @@ const clients = [
   { name: "Shiprocket", logo: "Shiprocket" },
   { name: "Adloggs", logo: "Adloggs" },
   { name: "Pidge", logo: "Pidge" },
+  { name: "Maruti", logo: "Maruti" },
 ];
 
 const ClientsSection = () => {
@@ -21,7 +22,7 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
           {clients.map((client) => (
             <Card key={client.name} className="border bg-card hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <CardContent className="flex items-center justify-center p-6 h-32">

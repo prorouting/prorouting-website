@@ -8,6 +8,13 @@ const partners = [
   { name: "Shadowfax", logo: "Shadowfax" },
   { name: "Loadshare", logo: "Loadshare" },
   { name: "Magicfleet", logo: "Magicfleet" },
+  { name: "Qwqer", logo: "Qwqer" },
+  { name: "Zypp", logo: "Zypp" },
+  { name: "Yulu", logo: "Yulu" },
+  { name: "Telyport", logo: "Telyport" },
+  { name: "Pidge", logo: "Pidge" },
+  { name: "Adloggs", logo: "Adloggs" },
+  { name: "Shiprocket Quick", logo: "Shiprocket Quick" },
 ];
 
 const PartnersSection = () => {
@@ -21,7 +28,7 @@ const PartnersSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {partners.map((partner) => (
             <Card key={partner.name} className="border bg-card hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <CardContent className="flex items-center justify-center p-6 h-32">

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,22 +16,28 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="flex items-center">
-              <span className="text-xl font-bold text-primary">ProRouting</span>
-            </a>
+            <Link to="/" className="flex items-center">
+              <span className="text-xl font-bold text-primary">PROROUTING</span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/#features" className="text-sm font-medium hover:text-primary transition-colors">
               Features
-            </a>
-            <a href="#clients" className="text-sm font-medium hover:text-primary transition-colors">
+            </Link>
+            <Link to="/#clients" className="text-sm font-medium hover:text-primary transition-colors">
               Clients
-            </a>
-            <a href="#partners" className="text-sm font-medium hover:text-primary transition-colors">
+            </Link>
+            <Link to="/#partners" className="text-sm font-medium hover:text-primary transition-colors">
               Partners
-            </a>
+            </Link>
+            <Link to="/ondc-tsp" className="text-sm font-medium hover:text-primary transition-colors">
+              ONDC TSP
+            </Link>
+            <Link to="/about" className="text-sm font-medium hover:text-primary transition-colors">
+              About
+            </Link>
             <Button variant="default" size="sm">
               Contact Us
             </Button>
@@ -49,27 +56,41 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
-            <a 
-              href="#features" 
+            <Link 
+              to="/#features" 
               className="text-sm font-medium hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Features
-            </a>
-            <a 
-              href="#clients" 
+            </Link>
+            <Link 
+              to="/#clients" 
               className="text-sm font-medium hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Clients
-            </a>
-            <a 
-              href="#partners" 
+            </Link>
+            <Link 
+              to="/#partners" 
               className="text-sm font-medium hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Partners
-            </a>
+            </Link>
+            <Link 
+              to="/ondc-tsp" 
+              className="text-sm font-medium hover:text-primary transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              ONDC TSP
+            </Link>
+            <Link 
+              to="/about" 
+              className="text-sm font-medium hover:text-primary transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
             <Button variant="default" size="sm" className="w-full">
               Contact Us
             </Button>
