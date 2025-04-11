@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -20,6 +19,9 @@ const pastClients = [
 ];
 
 const OndcTsp = () => {
+  // WhatsApp message URL for fleet onboarding to ONDC
+  const whatsappUrl = "https://wa.me/919113058973?text=I'm%20interested%20in%20onboarding%20my%20fleet%20onto%20ONDC%20and%20get%20delivery%20demand.%20How%20can%20you%20help%20us%3F";
+  
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -36,12 +38,11 @@ const OndcTsp = () => {
                 As a Technology Service Provider (TSP), we help you go live on the ONDC network and start receiving orders within a week by integrating your API with our already certified tech stack.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="font-medium">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="font-medium">
-                  Learn More
+                <Button size="lg" className="font-medium" asChild>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
                 </Button>
               </div>
             </div>
@@ -153,12 +154,16 @@ const OndcTsp = () => {
                 Get your logistics business on ONDC in just one week with our certified tech stack
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" className="font-medium text-primary">
-                  Schedule a Demo
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button size="lg" variant="secondary" className="font-medium text-primary" asChild>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    Schedule a Demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                  Contact Sales
+                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10" asChild>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    Contact Sales
+                  </a>
                 </Button>
               </div>
             </div>
