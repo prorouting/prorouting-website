@@ -11,16 +11,16 @@ const teamMembers = [
     role: "CoFounder and CEO",
     bio: "Experienced entrepreneur with a passion for logistics innovation and supply chain optimization.",
     photo: "/logos/abey-zachariah.jpg", // Updated image path
-    twitter: "https://twitter.com",
-    linkedin: "https://linkedin.com"
+    twitter: "https://x.com/abezack",
+    linkedin: "https://www.linkedin.com/in/abeyzachariah"
   },
   {
     name: "Mahesh Herle",
     role: "CoFounder and CTO",
     bio: "Technology expert specializing in API development, systems integration, and scalable architectures.",
     photo: "/logos/mahesh-herle.jpg", // Updated image path
-    twitter: "https://twitter.com",
-    linkedin: "https://linkedin.com"
+    twitter: "https://x.com/mherle",
+    linkedin: "https://www.linkedin.com/in/maheshherle"
   },
 ];
 
