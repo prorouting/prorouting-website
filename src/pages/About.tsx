@@ -10,7 +10,7 @@ const teamMembers = [
     name: "Abey Zachariah",
     role: "CoFounder and CEO",
     bio: "Experienced entrepreneur with a passion for logistics innovation and supply chain optimization.",
-    photo: "https://i.pravatar.cc/300?img=1", // Placeholder image
+    photo: "/logos/abey-zachariah.jpg", // Updated image path
     twitter: "https://twitter.com",
     linkedin: "https://linkedin.com"
   },
@@ -18,7 +18,7 @@ const teamMembers = [
     name: "Mahesh Herle",
     role: "CoFounder and CTO",
     bio: "Technology expert specializing in API development, systems integration, and scalable architectures.",
-    photo: "https://i.pravatar.cc/300?img=2", // Placeholder image
+    photo: "/logos/mahesh-herle.jpg", // Updated image path
     twitter: "https://twitter.com",
     linkedin: "https://linkedin.com"
   },
@@ -134,3 +134,4 @@ const About = () => {
 };
 
 export default About;
+
