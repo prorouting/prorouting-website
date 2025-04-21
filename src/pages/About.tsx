@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Linkedin, Twitter } from "lucide-react";
 
 const teamMembers = [
@@ -83,9 +84,12 @@ const About = () => {
               {teamMembers.map((member) => (
                 <Card key={member.name} className="border hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="pt-6 flex flex-col md:flex-row gap-6 items-center">
-                    <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
-                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
-                    </div>
+                    <Avatar className="w-32 h-32 rounded-full border-2 border-primary/10">
+                      <AvatarImage src={member.photo} alt={member.name} />
+                      <AvatarFallback className="text-3xl">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
                     <div>
                       <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                       <p className="text-primary font-medium mb-2">{member.role}</p>
@@ -134,4 +138,3 @@ const About = () => {
 };
 
 export default About;
-
