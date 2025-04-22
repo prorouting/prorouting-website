@@ -5,13 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Linkedin, Twitter } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const teamMembers = [
   {
     name: "Abey Zachariah",
     role: "CoFounder and CEO",
     bio: "Experienced entrepreneur with a passion for logistics innovation and supply chain optimization.",
-    photo: "/logos/abey-zachariah.jpg", // Updated image path
+    photo: "/logos/abey-zachariah.jpg",
     twitter: "https://x.com/abezack",
     linkedin: "https://www.linkedin.com/in/abeyzachariah"
   },
@@ -19,13 +20,36 @@ const teamMembers = [
     name: "Mahesh Herle",
     role: "CoFounder and CTO",
     bio: "Technology expert specializing in API development, systems integration, and scalable architectures.",
-    photo: "/logos/mahesh-herle.jpg", // Updated image path
+    photo: "/logos/mahesh-herle.jpg",
     twitter: "https://x.com/mherle",
     linkedin: "https://www.linkedin.com/in/maheshherle"
   },
 ];
 
 const About = () => {
+  const [imagesLoaded, setImagesLoaded] = useState<Record<string, boolean>>({});
+  
+  useEffect(() => {
+    // Preload images to check if they're available
+    teamMembers.forEach(member => {
+      const img = new Image();
+      img.onload = () => {
+        setImagesLoaded(prev => ({
+          ...prev,
+          [member.name]: true
+        }));
+      };
+      img.onerror = () => {
+        console.error(`Failed to load image for ${member.name}`);
+        setImagesLoaded(prev => ({
+          ...prev,
+          [member.name]: false
+        }));
+      };
+      img.src = member.photo;
+    });
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -84,12 +108,28 @@ const About = () => {
               {teamMembers.map((member) => (
                 <Card key={member.name} className="border hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="pt-6 flex flex-col md:flex-row gap-6 items-center">
-                    <Avatar className="w-32 h-32 rounded-full border-2 border-primary/10">
-                      <AvatarImage src={member.photo} alt={member.name} />
-                      <AvatarFallback className="text-3xl">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </AvatarFallback>
-                    </Avatar>
+                    {imagesLoaded[member.name] !== false ? (
+                      <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0 border-2 border-primary/10">
+                        <img 
+                          src={member.photo} 
+                          alt={member.name} 
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback if image fails to load
+                            setImagesLoaded(prev => ({
+                              ...prev,
+                              [member.name]: false
+                            }));
+                          }}
+                        />
+                      </div>
+                    ) : (
+                      <Avatar className="w-32 h-32 rounded-full border-2 border-primary/10">
+                        <AvatarFallback className="text-3xl">
+                          {member.name.split(' ').map(n => n[0]).join('')}
+                        </AvatarFallback>
+                      </Avatar>
+                    )}
                     <div>
                       <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                       <p className="text-primary font-medium mb-2">{member.role}</p>
